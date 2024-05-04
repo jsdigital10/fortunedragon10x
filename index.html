@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://perestop.com.br/appdragon/ -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./appdragon/css2" rel="stylesheet">
+    <title>Software do Dragon</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body {
+    background: #29292C;
+    background-image: url(appdragon/background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+
+p{
+    margin: 0;
+}
+
+::-webkit-scrollbar{
+    width: 7px;
+    background-color: #303030;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #CF5908;
+}
+
+.box{
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    height: 500px;
+    margin: 4em auto 2em auto;
+}
+
+.box > img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+
+.box-items{
+    display: flex;
+    width: 100%;
+    height: 83%;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    font-size: 13px;
+    gap: 9px;
+}
+
+.box-item{
+    display: flex;
+    width: 79%;
+    height: 48px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, hsl(2, 50%, 50%), #CB6CE6, #C700FF, #C700FF);
+    gap: 3px;
+    align-items: center;
+    border: 1px solid #CB6CE6;
+}
+
+.box-item #validate, .box-item #turbo, .box-item #normal, .box-item #level {
+    font-size: 16px;
+    text-shadow: 0 0 20px #fff900, 1px 1px 20px #000000, 2px 2px 20px #fff900, -1px -1px 20px #fff900, -2px -2px 20px #fff900;
+}
+
+.box-item span{
+    color: white;
+    font-weight: bold;
+}
+
+.box-bottom{
+    position: absolute;
+    width: 78%; 
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1px;
+}
+
+.animated-text{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7px;
+}
+
+.animated-text span{
+    position: absolute;
+    left: 100%;
+    font-size: .5rem;
+    color: white;
+    animation: animatedText 20s linear infinite;
+}
+
+@keyframes animatedText {
+    100% {
+        left: -150%;
+    }
+}
+
+@keyframes pulse {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.05);
+}
+100% {
+    transform: scale(1);
+}
+}
+
+#btn {
+width: 100%;
+padding: 8px 0;
+color: white;
+background: linear-gradient(45deg, #34c620, #29f513);
+outline: none;
+border-radius: 10px;
+cursor: pointer;
+font-weight: bold;
+animation: pulse 1.5s infinite;
+border: 1px solid #53ff7b;
+font-size: 15px;
+}
+
+
+#btn:active {
+animation: none;
+transform: scale(0.95);
+}
+
+
+#btn:disabled{
+    background: transparent;
+    color: #ffaf93;
+    font-size: 14px;
+    font-weight: normal;
+    border: 0px;
+}
+
+#iframe {
+    border-radius: 15px; 
+    align-items: center;
+    align-content: center;
+    margin-bottom: 1em;
+    margin-left: calc(50% - 512px);
+    width: 1024px;
+    height: 600px;
+}
+
+@media (max-width: 1024px){
+    #iframe{
+        margin-left: calc(50% - 384px);
+        width: 768px;
+        height: 800px; 
+    }
+}
+
+@media (max-width: 768px){
+    #iframe{
+        margin-left: calc(50% - 180px);
+        width: 360px;
+        height:600px; 
+    }
+}
+
+iframe{
+    max-width:95%;
+}
+
+.footer{
+    color: #ffffff;
+    background-color: #1e1e1e;
+    text-align: center;
+    align-items: center;
+    font-size: 0.875em;
+    font-weight: 400;
+    padding: 10px;
+    margin: 0;
+    margin-top: 1em;;
+}
+
+.footer #link{
+    color: #CF5908;
+    font-weight: 700;
+}
+</style>
+
+<script src="./appdragon/wp-emoji-release.min.js.download" defer></script>
+<style id="NotiflixInternalCSS">[id^=NotiflixNotifyWrap]{pointer-events:none;position:fixed;z-index:4001;opacity:1;right:10px;top:10px;width:280px;max-width:96%;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent}[id^=NotiflixNotifyWrap].nx-flex-center-center{max-height:calc(100vh - 20px);overflow-x:hidden;overflow-y:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;margin:auto}[id^=NotiflixNotifyWrap]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixNotifyWrap]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixNotifyWrap]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixNotifyWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixNotifyOverlay]{-webkit-transition:background .3s ease-in-out;-o-transition:background .3s ease-in-out;transition:background .3s ease-in-out}[id^=NotiflixNotifyWrap]>div{pointer-events:all;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;width:100%;display:inline-block;position:relative;margin:0 0 10px;border-radius:5px;background:#1e1e1e;color:#fff;padding:10px 12px;font-size:14px;line-height:1.4}[id^=NotiflixNotifyWrap]>div:last-child{margin:0}[id^=NotiflixNotifyWrap]>div.with-callback{cursor:pointer}[id^=NotiflixNotifyWrap]>div.with-icon{padding:8px}[id^=NotiflixNotifyWrap]>div.click-to-close{cursor:pointer}[id^=NotiflixNotifyWrap]>div.with-close-button{padding:10px 30px 10px 12px}[id^=NotiflixNotifyWrap]>div.with-icon.with-close-button{padding:6px 30px 6px 6px}[id^=NotiflixNotifyWrap]>div>span.the-message{font-weight:normal;font-family:inherit!important;word-break:break-all;word-break:break-word}[id^=NotiflixNotifyWrap]>div>span.notify-close-button{cursor:pointer;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;position:absolute;right:8px;top:0;bottom:0;margin:auto;color:inherit;width:16px;height:16px}[id^=NotiflixNotifyWrap]>div>span.notify-close-button:hover{-webkit-transform:rotate(90deg);transform:rotate(90deg)}[id^=NotiflixNotifyWrap]>div>span.notify-close-button>svg{position:absolute;width:16px;height:16px;right:0;top:0}[id^=NotiflixNotifyWrap]>div>.nmi{position:absolute;width:40px;height:40px;font-size:30px;line-height:40px;text-align:center;left:8px;top:0;bottom:0;margin:auto;border-radius:inherit}[id^=NotiflixNotifyWrap]>div>.wfa.shadow{color:inherit;background:rgba(0,0,0,.15);box-shadow:inset 0 0 34px rgba(0,0,0,.2);text-shadow:0 0 10px rgba(0,0,0,.3)}[id^=NotiflixNotifyWrap]>div>span.with-icon{position:relative;float:left;width:calc(100% - 40px);margin:0 0 0 40px;padding:0 0 0 10px;-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixNotifyWrap]>div.rtl-on>.nmi{left:auto;right:8px}[id^=NotiflixNotifyWrap]>div.rtl-on>span.with-icon{padding:0 10px 0 0;margin:0 40px 0 0}[id^=NotiflixNotifyWrap]>div.rtl-on>span.notify-close-button{right:auto;left:8px}[id^=NotiflixNotifyWrap]>div.with-icon.with-close-button.rtl-on{padding:6px 6px 6px 30px}[id^=NotiflixNotifyWrap]>div.with-close-button.rtl-on{padding:10px 12px 10px 30px}[id^=NotiflixNotifyOverlay].with-animation,[id^=NotiflixNotifyWrap]>div.with-animation.nx-fade{-webkit-animation:notify-animation-fade .3s ease-in-out 0s normal;animation:notify-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes notify-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-zoom{-webkit-animation:notify-animation-zoom .3s ease-in-out 0s normal;animation:notify-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-zoom{0%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes notify-animation-zoom{0%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-right{-webkit-animation:notify-animation-from-right .3s ease-in-out 0s normal;animation:notify-animation-from-right .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-right{0%{right:-300px;opacity:0}50%{right:8px;opacity:1}100%{right:0;opacity:1}}@keyframes notify-animation-from-right{0%{right:-300px;opacity:0}50%{right:8px;opacity:1}100%{right:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-left{-webkit-animation:notify-animation-from-left .3s ease-in-out 0s normal;animation:notify-animation-from-left .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-left{0%{left:-300px;opacity:0}50%{left:8px;opacity:1}100%{left:0;opacity:1}}@keyframes notify-animation-from-left{0%{left:-300px;opacity:0}50%{left:8px;opacity:1}100%{left:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-top{-webkit-animation:notify-animation-from-top .3s ease-in-out 0s normal;animation:notify-animation-from-top .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-top{0%{top:-50px;opacity:0}50%{top:8px;opacity:1}100%{top:0;opacity:1}}@keyframes notify-animation-from-top{0%{top:-50px;opacity:0}50%{top:8px;opacity:1}100%{top:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-bottom{-webkit-animation:notify-animation-from-bottom .3s ease-in-out 0s normal;animation:notify-animation-from-bottom .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-bottom{0%{bottom:-50px;opacity:0}50%{bottom:8px;opacity:1}100%{bottom:0;opacity:1}}@keyframes notify-animation-from-bottom{0%{bottom:-50px;opacity:0}50%{bottom:8px;opacity:1}100%{bottom:0;opacity:1}}[id^=NotiflixNotifyOverlay].with-animation.remove,[id^=NotiflixNotifyWrap]>div.with-animation.nx-fade.remove{opacity:0;-webkit-animation:notify-remove-fade .3s ease-in-out 0s normal;animation:notify-remove-fade .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-fade{0%{opacity:1}100%{opacity:0}}@keyframes notify-remove-fade{0%{opacity:1}100%{opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-zoom.remove{-webkit-transform:scale(0);transform:scale(0);-webkit-animation:notify-remove-zoom .3s ease-in-out 0s normal;animation:notify-remove-zoom .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-zoom{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(0);transform:scale(0)}}@keyframes notify-remove-zoom{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(0);transform:scale(0)}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-top.remove{opacity:0;-webkit-animation:notify-remove-to-top .3s ease-in-out 0s normal;animation:notify-remove-to-top .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-top{0%{top:0;opacity:1}50%{top:8px;opacity:1}100%{top:-50px;opacity:0}}@keyframes notify-remove-to-top{0%{top:0;opacity:1}50%{top:8px;opacity:1}100%{top:-50px;opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-right.remove{opacity:0;-webkit-animation:notify-remove-to-right .3s ease-in-out 0s normal;animation:notify-remove-to-right .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-right{0%{right:0;opacity:1}50%{right:8px;opacity:1}100%{right:-300px;opacity:0}}@keyframes notify-remove-to-right{0%{right:0;opacity:1}50%{right:8px;opacity:1}100%{right:-300px;opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-bottom.remove{opacity:0;-webkit-animation:notify-remove-to-bottom .3s ease-in-out 0s normal;animation:notify-remove-to-bottom .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-bottom{0%{bottom:0;opacity:1}50%{bottom:8px;opacity:1}100%{bottom:-50px;opacity:0}}@keyframes notify-remove-to-bottom{0%{bottom:0;opacity:1}50%{bottom:8px;opacity:1}100%{bottom:-50px;opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-left.remove{opacity:0;-webkit-animation:notify-remove-to-left .3s ease-in-out 0s normal;animation:notify-remove-to-left .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-left{0%{left:0;opacity:1}50%{left:8px;opacity:1}100%{left:-300px;opacity:0}}@keyframes notify-remove-to-left{0%{left:0;opacity:1}50%{left:8px;opacity:1}100%{left:-300px;opacity:0}}[id^=NotiflixReportWrap]{position:fixed;z-index:4002;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;left:0;top:0;padding:10px;color:#1e1e1e;border-radius:25px;background:transparent;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixReportWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixReportWrap]>div[class*="-overlay"]{width:100%;height:100%;left:0;top:0;background:rgba(255,255,255,.5);position:fixed;z-index:0}[id^=NotiflixReportWrap]>div[class*="-content"]{width:320px;max-width:100%;max-height:96vh;overflow-x:hidden;overflow-y:auto;border-radius:inherit;padding:10px;-webkit-filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));border:1px solid rgba(0,0,0,.03);background:#f8f8f8;position:relative;z-index:1}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixReportWrap]>div[class*="-content"]>div[class$="-icon"]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:110px;height:110px;display:block;margin:6px auto 12px}[id^=NotiflixReportWrap]>div[class*="-content"]>div[class$="-icon"] svg{min-width:100%;max-width:100%;height:auto}[id^=NotiflixReportWrap]>*>h5{word-break:break-all;word-break:break-word;font-family:inherit!important;font-size:16px;font-weight:500;line-height:1.4;margin:0 0 10px;padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.1);float:left;width:100%;text-align:center}[id^=NotiflixReportWrap]>*>p{word-break:break-all;word-break:break-word;font-family:inherit!important;font-size:13px;line-height:1.4;font-weight:normal;float:left;width:100%;padding:0 10px;margin:0 0 10px}[id^=NotiflixReportWrap] a#NXReportButton{word-break:break-all;word-break:break-word;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:inherit!important;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;cursor:pointer;float:right;padding:7px 17px;background:#32c682;font-size:14px;line-height:1.4;font-weight:500;border-radius:inherit!important;color:#fff}[id^=NotiflixReportWrap] a#NXReportButton:hover{box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25)}[id^=NotiflixReportWrap].rtl-on a#NXReportButton{float:left}[id^=NotiflixReportWrap]>div[class*="-overlay"].with-animation{-webkit-animation:report-overlay-animation .3s ease-in-out 0s normal;animation:report-overlay-animation .3s ease-in-out 0s normal}@-webkit-keyframes report-overlay-animation{0%{opacity:0}100%{opacity:1}}@keyframes report-overlay-animation{0%{opacity:0}100%{opacity:1}}[id^=NotiflixReportWrap]>div[class*="-content"].with-animation.nx-fade{-webkit-animation:report-animation-fade .3s ease-in-out 0s normal;animation:report-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes report-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixReportWrap]>div[class*="-content"].with-animation.nx-zoom{-webkit-animation:report-animation-zoom .3s ease-in-out 0s normal;animation:report-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes report-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixReportWrap].remove>div[class*="-overlay"].with-animation{opacity:0;-webkit-animation:report-overlay-animation-remove .3s ease-in-out 0s normal;animation:report-overlay-animation-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}@keyframes report-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixReportWrap].remove>div[class*="-content"].with-animation.nx-fade{opacity:0;-webkit-animation:report-animation-fade-remove .3s ease-in-out 0s normal;animation:report-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes report-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixReportWrap].remove>div[class*="-content"].with-animation.nx-zoom{opacity:0;-webkit-animation:report-animation-zoom-remove .3s ease-in-out 0s normal;animation:report-animation-zoom-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}@keyframes report-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}[id^=NotiflixConfirmWrap]{position:fixed;z-index:4003;width:100%;height:100%;left:0;top:0;padding:10px;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixConfirmWrap].nx-position-center-top{-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-center-bottom{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap].nx-position-left-top{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-left-center{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start}[id^=NotiflixConfirmWrap].nx-position-left-bottom{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap].nx-position-right-top{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-right-center{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end}[id^=NotiflixConfirmWrap].nx-position-right-bottom{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixConfirmWrap]>div[class*="-overlay"]{width:100%;height:100%;left:0;top:0;background:rgba(255,255,255,.5);position:fixed;z-index:0}[id^=NotiflixConfirmWrap]>div[class*="-overlay"].with-animation{-webkit-animation:confirm-overlay-animation .3s ease-in-out 0s normal;animation:confirm-overlay-animation .3s ease-in-out 0s normal}@-webkit-keyframes confirm-overlay-animation{0%{opacity:0}100%{opacity:1}}@keyframes confirm-overlay-animation{0%{opacity:0}100%{opacity:1}}[id^=NotiflixConfirmWrap].remove>div[class*="-overlay"].with-animation{opacity:0;-webkit-animation:confirm-overlay-animation-remove .3s ease-in-out 0s normal;animation:confirm-overlay-animation-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}@keyframes confirm-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixConfirmWrap]>div[class*="-content"]{width:300px;max-width:100%;max-height:96vh;overflow-x:hidden;overflow-y:auto;border-radius:25px;padding:10px;margin:0;-webkit-filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));background:#f8f8f8;color:#1e1e1e;position:relative;z-index:1;text-align:center}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]{float:left;width:100%;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>h5{float:left;width:100%;margin:0;padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.1);color:#32c682;font-family:inherit!important;font-size:16px;line-height:1.4;font-weight:500;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div{font-family:inherit!important;margin:15px 0 20px;padding:0 10px;float:left;width:100%;font-size:14px;line-height:1.4;font-weight:normal;color:inherit;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div{font-family:inherit!important;float:left;width:100%;margin:15px 0 0;padding:0}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input{font-family:inherit!important;float:left;width:100%;height:40px;margin:0;padding:0 15px;border:1px solid rgba(0,0,0,.1);border-radius:25px;font-size:14px;font-weight:normal;line-height:1;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;text-align:left}[id^=NotiflixConfirmWrap].rtl-on>div[class*="-content"]>div[class*="-head"]>div>div>input{text-align:right}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input:hover{border-color:rgba(0,0,0,.1)}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input:focus{border-color:rgba(0,0,0,.3)}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input.nx-validation-failure{border-color:#ff5549}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input.nx-validation-success{border-color:#32c682}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border-radius:inherit;float:left;width:100%;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a{cursor:pointer;font-family:inherit!important;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;float:left;width:48%;padding:9px 5px;border-radius:inherit!important;font-weight:500;font-size:15px;line-height:1.4;color:#f8f8f8;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.confirm-button-ok{margin:0 2% 0 0;background:#32c682}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.confirm-button-cancel{margin:0 0 0 2%;background:#a9a9a9}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.full{margin:0;width:100%}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a:hover{box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25)}[id^=NotiflixConfirmWrap].rtl-on>div[class*="-content"]>div[class*="-buttons"],[id^=NotiflixConfirmWrap].rtl-on>div[class*="-content"]>div[class*="-buttons"]>a{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}[id^=NotiflixConfirmWrap].with-animation.nx-fade>div[class*="-content"]{-webkit-animation:confirm-animation-fade .3s ease-in-out 0s normal;animation:confirm-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes confirm-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixConfirmWrap].with-animation.nx-zoom>div[class*="-content"]{-webkit-animation:confirm-animation-zoom .3s ease-in-out 0s normal;animation:confirm-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes confirm-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixConfirmWrap].with-animation.nx-fade.remove>div[class*="-content"]{opacity:0;-webkit-animation:confirm-animation-fade-remove .3s ease-in-out 0s normal;animation:confirm-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes confirm-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixConfirmWrap].with-animation.nx-zoom.remove>div[class*="-content"]{opacity:0;-webkit-animation:confirm-animation-zoom-remove .3s ease-in-out 0s normal;animation:confirm-animation-zoom-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}@keyframes confirm-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}[id^=NotiflixLoadingWrap]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:fixed;z-index:4000;width:100%;height:100%;left:0;top:0;right:0;bottom:0;margin:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box;background:rgba(0,0,0,.8);font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}[id^=NotiflixLoadingWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixLoadingWrap].click-to-close{cursor:pointer}[id^=NotiflixLoadingWrap]>div[class*="-icon"]{width:60px;height:60px;position:relative;-webkit-transition:top .2s ease-in-out;-o-transition:top .2s ease-in-out;transition:top .2s ease-in-out;margin:0 auto}[id^=NotiflixLoadingWrap]>div[class*="-icon"] img,[id^=NotiflixLoadingWrap]>div[class*="-icon"] svg{max-width:unset;max-height:unset;width:100%;height:100%;position:absolute;left:0;top:0}[id^=NotiflixLoadingWrap]>p{position:relative;margin:10px auto 0;font-family:inherit!important;font-weight:normal;font-size:15px;line-height:1.4;padding:0 10px;width:100%;text-align:center}[id^=NotiflixLoadingWrap].with-animation{-webkit-animation:loading-animation-fade .3s ease-in-out 0s normal;animation:loading-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes loading-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes loading-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixLoadingWrap].with-animation.remove{opacity:0;-webkit-animation:loading-animation-fade-remove .3s ease-in-out 0s normal;animation:loading-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes loading-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes loading-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixLoadingWrap]>p.new{-webkit-animation:loading-new-message-fade .3s ease-in-out 0s normal;animation:loading-new-message-fade .3s ease-in-out 0s normal}@-webkit-keyframes loading-new-message-fade{0%{opacity:0}100%{opacity:1}}@keyframes loading-new-message-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixBlockWrap]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-box-sizing:border-box;box-sizing:border-box;position:absolute;z-index:1000;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:rgba(255,255,255,.9);text-align:center;animation-duration:.4s;width:100%;height:100%;left:0;top:0;border-radius:inherit;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixBlockWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixBlockWrap]>span[class*="-icon"]{display:block;width:45px;height:45px;position:relative;margin:0 auto}[id^=NotiflixBlockWrap]>span[class*="-icon"] svg{width:inherit;height:inherit}[id^=NotiflixBlockWrap]>span[class*="-message"]{position:relative;display:block;width:100%;margin:10px auto 0;padding:0 10px;font-family:inherit!important;font-weight:normal;font-size:14px;line-height:1.4}[id^=NotiflixBlockWrap].with-animation{-webkit-animation:block-animation-fade .3s ease-in-out 0s normal;animation:block-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes block-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes block-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixBlockWrap].with-animation.remove{opacity:0;-webkit-animation:block-animation-fade-remove .3s ease-in-out 0s normal;animation:block-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes block-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes block-animation-fade-remove{0%{opacity:1}100%{opacity:0}}</style></head>
+
+<body><div class="elementor-element elementor-element-39405d3d elementor-widget elementor-widget-html" data-id="39405d3d" data-element_type="widget" data-widget_type="html.default">
+    <div class="elementor-widget-container">
+        <script src="./appdragon/notiflix-aio-2.6.0.min.js.download"></script>
+        <script>
+            var position = "center-top";
+            var color = "verde";
+            var animation = "from-top";
+            var product_name = "";
+            var phrase = "acabou de GANHAR com o";
+            var timeout = 4000;
+            var type_name = "masc, fem";
+            var msg_final = "";
+            var min_time = 10;
+            var max_time = 45;
+            var nomePessoas = ['Jose', 'Joao', 'Antonio', 'Francisco', 'Carlos', 'Paulo', 'Pedro', 'Lucas', 'Luiz', 'Marcos', 'Luis', 'Gabriel', 'Rafael', 'Daniel', 'Marcelo', 'Bruno', 'Eduardo', 'Felipe', 'Rodrigo', 'Manoel', 'Mateus', 'Andre', 'Fernando', 'Fabio', 'Leonardo', 'Gustavo', 'Guilherme', 'Leandro', 'Tiago', 'Anderson', 'Ricardo', 'Marcio', 'Jorge', 'Alexandre', 'Roberto', 'Edson', 'Diego', 'Vitor', 'Sergio', 'Claudio', 'Matheus', 'Thiago', 'Geraldo', 'Adriano', 'Luciano', 'Julio', 'Renato', 'Alex', 'Vinicius', 'Rogerio', 'Samuel', 'Ronaldo', 'Mario', 'Flavio', 'Douglas', 'Igor', 'Davi', 'Manuel', 'Jeferson', 'Cicero', 'Victor', 'Miguel', 'Robson', 'Mauricio', 'Danilo', 'Henrique', 'Caio', 'Reginaldo', 'Joaquim', 'Benedito', 'Gilberto', 'Marco', 'Alan', 'Nelson', 'Cristiano', 'Elias', 'Wilson', 'Valdir', 'Emerson', 'Luan', 'David', 'Renan', 'Severino', 'Fabricio', 'Mauro', 'Jonas', 'Gilmar', 'Jean', 'Fabiano', 'Wesley', 'Diogo', 'Adilson', 'Jair', 'Alessandro', 'Everton', 'Osvaldo', 'Gilson', 'Willian', 'Joel', 'Silvio', 'Helio', 'Maicon', 'Reinaldo', 'Pablo', 'Artur', 'Vagner', 'Valter', 'Celso', 'Ivan', 'Cleiton', 'Vanderlei', 'Vicente', 'Arthur', 'Milton', 'Domingos', 'Wagner', 'Sandro', 'Moises', 'Edilson', 'Ademir', 'Adao', 'Evandro', 'Cesar', 'Valmir', 'Murilo', 'Juliano', 'Edvaldo', 'Ailton', 'Junior', 'Breno', 'Nicolas', 'Ruan', 'Alberto', 'Rubens', 'Nilton', 'Augusto', 'Cleber', 'Osmar', 'Nilson', 'Hugo', 'Otavio', 'Vinicios', 'Italo', 'Wilian', 'Alisson', 'Aparecido', 'Maria', 'Ana', 'Francisca', 'Antonia', 'Adriana', 'Juliana', 'Marcia', 'Fernanda', 'Patricia', 'Aline', 'Sandra', 'Camila', 'Amanda', 'Bruna', 'Jessica', 'Leticia', 'Julia', 'Luciana', 'Vanessa', 'Mariana', 'Gabriela', 'Vera', 'Vitoria', 'Larissa', 'Claudia', 'Beatriz', 'Rita', 'Luana', 'Sonia', 'Renata', 'Eliane'];
+            var sobrePessoas = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.', 'G.', 'H.', 'I.', 'J.', 'K.', 'L.', 'M.', 'N.', 'O.', 'P.', 'Q.', 'R.', 'S.', 'T.', 'U.', 'V.', 'W.', 'X.', 'Y.', 'Z.'];
+            var materiais = ['Software do Dragon'];
+            var option = {
+                position: position,
+                cssAnimationStyle: animation,
+                plainText: false,
+                timeout: timeout
+            };
+            function show_notification() {
+                msg_final = "<strong>" + nomePessoas[Math.floor(Math.random() * nomePessoas.length)] + " " + sobrePessoas[Math.floor(Math.random() * sobrePessoas.length)] + "</strong>";
+                msg_final += decodeURIComponent(escape(" " + phrase + " "));
+                msg_final += "<strong>" + materiais[Math.floor(Math.random() * materiais.length)] + "</strong>";
+
+                if (color == "verde") {
+                    Notiflix.Notify.Success(msg_final, option);
+                }
+
+                if (color == "azul") {
+                    Notiflix.Notify.Info(msg_final, option);
+                }
+
+                if (color == "vermelho") {
+                    Notiflix.Notify.Failure(msg_final, option);
+                }
+
+                if (color == "amarelo") {
+                    Notiflix.Notify.Warning(msg_final, option);
+                }
+
+                var rand = Math.floor(Math.random() * (max_time - min_time + 1) + min_time);
+                    setTimeout(show_notification, rand * 1000);
+                }
+                setTimeout(show_notification, 4 * 1000);
+            </script>
+            
+
+<script src="./appdragon/jquery.min.js.download"></script>
+<script disable-devtool-auto="" src="./appdragon/disable-devtool"></script>
+
+
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+
+<div class="box">
+    <img decoding="async" src="./appdragon/SOFTWARE-DRAGON-5.png" draggable="false">
+        <div class="box-items">
+            <div class="box-item">
+                <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+                    <img decoding="async" src="./appdragon/botao_rodada.webp" width="48" height="48" draggable="false">
+                </div>
+                <span>NORMAL: <span id="normal">7X</span></span>
+            </div>    
+
+            <div class="box-item">
+                <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+                    <img decoding="async" src="./appdragon/botao_turbo.webp" width="30" height="30" draggable="false">
+                </div>
+                <span>TURBO: <span id="turbo">8X</span></span>
+            </div>
+
+            <div class="box-item">
+                <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+                    <img loading="lazy" decoding="async" src="./appdragon/botao_asertividade.webp" width="30" height="30" draggable="false">
+                </div>
+                <span>ACERTO DE: <span id="level">98,3%</span></span>
+            </div>
+
+            <div class="box-item">
+                <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+                    <img loading="lazy" decoding="async" src="./appdragon/botao_validade.webp" width="30" height="30" draggable="false">
+                </div>
+                <span>VÁLIDO ATÉ: <span id="validate">20h22</span></span>
+            </div>
+        </div>
+
+        <div class="box-bottom">
+            <div class="animated-text">
+                <span>🏆 MULTIPLICADOR DE 3.500X ATIVADO ✅ FUNCIONANDO APENAS NA NUBET 🥇 NOVA BREXA DETECTADA 🤑 FAÇA SUA ENTRADA IMEDIATAMENTE 🏆 MULTIPLICADOR DE 3.500X ATIVADO ✅ FUNCIONANDO APENAS NA NUBET 🥇 NOVA BREXA DETECTADA 🤑 FAÇA SUA ENTRADA IMEDIATAMENTE</span>
+            </div>
+            <button id="btn">GERAR NOVO SINAL</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+var btn = document.getElementById("btn");
+var normal = document.getElementById("normal");
+var turbo = document.getElementById("turbo");
+var validate = document.getElementById("validate");
+var level = document.getElementById("level");
+
+var clickCount = 0;
+
+btn.addEventListener("click", function(e) {
+    clickCount++;
+
+        var jogadas1 = Math.floor(Math.random() * 9) + 1;
+        var jogadas2 = Math.floor(Math.random() * 9) + 1;
+
+        var agora = new Date();
+        var hora = agora.getHours();
+        var minutos = agora.getMinutes() + 1;
+        var horaFormatada = hora + 'h' + (minutos < 10 ? '0' + minutos : minutos);
+
+        normal.textContent = jogadas1 + "X";
+        turbo.textContent = jogadas2 + "X";
+        validate.textContent = horaFormatada;
+        level.textContent = "98,3%";
+
+        const audio = new Audio("appdragon/audio.mp3");
+        audio.play();
+
+        btn.setAttribute("disabled", true);
+        btn.textContent = "Aguarde (60s...)";
+
+        var i = 60;
+        const interval = setInterval(() => {
+            i = i-1;
+            btn.textContent = "Aguarde (" + i + "s...)";
+        }, 1000);
+
+        setTimeout(() => {
+            btn.removeAttribute("disabled");
+            btn.textContent = "GERAR NOVO SINAL";
+            clearInterval(interval);
+        }, 60000);
+
+});
+</script>
+
+<!--Iframe link afiliado-->
+<div style="display:flex;flex-direction: column;justify-content: center;align-items: center;">
+    <iframe class="iframe" style="margin:0px !important;margin-bottom:10px !important; " src="SEUSITE.COM" id="iframe"></iframe>
+</div>
+
+
+<script>
+    function limparConsole() {
+        console.clear();
+    }
+    setInterval(limparConsole, 1000);
+</script>
+<script type="text/javascript">
+    const lazyloadRunObserver = () => {
+        const dataAttribute = 'data-e-bg-lazyload';
+        const lazyloadBackgrounds = document.querySelectorAll( `[${ dataAttribute }]:not(.lazyloaded)` );
+        const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+        entries.forEach( ( entry ) => {
+            if ( entry.isIntersecting ) {
+                let lazyloadBackground = entry.target;
+                const lazyloadSelector = lazyloadBackground.getAttribute( dataAttribute );
+            if ( lazyloadSelector ) {
+                lazyloadBackground = entry.target.querySelector( lazyloadSelector );
+            }
+            if( lazyloadBackground ) {
+                lazyloadBackground.classList.add( 'lazyloaded' );
+            }
+                lazyloadBackgroundObserver.unobserve( entry.target );
+            }
+            });
+            }, { rootMargin: '100px 0px 100px 0px' } );
+                lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+                lazyloadBackgroundObserver.observe( lazyloadBackground );
+            } );
+            };
+            const events = [
+                'DOMContentLoaded',
+                'elementor/lazyload/observe',
+            ];
+            events.forEach( ( event ) => {
+                document.addEventListener( event, lazyloadRunObserver );
+            });
+</script>
+
+</div>
+
+
+<div id="torrent-scanner-popup" style="display: none;"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/css/custom.css"><div id="yf-bt-wrapper" class="free"><div class="header"><img class="sts-logo" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/ts-free-logo.png"><div class="search-content"><input id="search-input" class="search-input" type="search" placeholder="Start your search here..."><span id="search-btn" class="search-btn"></span></div></div><div class="container"><div class="main-container"><div id="torrent-data" class="torrent-content"><div class="t-table"><div class="t-header"><div class="t-name">Torrent search results</div></div><div id="checked-sites" class="checked-sites-section"><div class="left">Checked Sites</div><div class="right"><span id="sites-count" class="sites-count">0</span></div></div><div id="table-body" class="t-body"><div id="loading" class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div><div class="table-message-container" id="table-message"><p>No items to list <br> Use the search bar above for instant results</p></div></div></div></div><div class="tooltip"><p class="tooltip-text">To see search results, type here and hit `Enter`</p></div><div class="footer"><span><span id="numberScanned" class="numberScanned">No results</span></span></div><div class="upgradeProPanel"><div class="upgradeProPanelTitle">Try our Torrent Scanner Plus to unlock:</div><div class="upgradeProPanelList"><div><p>Faster Results</p></div><div><p>Unlimited Search Results with detailed torrent info</p></div><div><p>Secure Torrenting</p></div></div><a class="upgrade-to-pro-button-2" id="buy-pro" href="https://shop.lavasoft.com/clickgate/join.aspx?ref=shop.lavasoft.com&amp;ujid=W9yhyAwEW5Q%3D" target="_blank">Get Torrent Scanner +</a></div></div><div class="sync-container nav-se-container"><div class="nav-se-content"><img class="sync-icon nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-sync.svg"><div class="nav-se-title">One more step to go before you start torrenting!</div><p class="nav-se-text">This extension can sync results with BitTorrent and/or uTorrent for instant downloading.</p><p class="nav-se-text">To activate this feature, please click on the button below, and then on the Chrome message to activate the 'Messaging Permission'.</p><button class="sync-permission-btn nav-se-btn">Activate Messaging Permission</button></div><div class="nav-se-content display-none"><img class="sync-icon nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-sync.svg"><div class="nav-se-title">Syncing...</div><p class="nav-se-text">Please allow Messaging Permissions in the proceeding Chrome message.</p></div><div class="nav-se-content display-none"><img class="sync-icon nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-success.svg"><div class="nav-se-title">Sync Complete</div><p class="nav-se-text">You have successfully activated the “Messaging Permission” feature. All your search results will sync with BitTorrent and/or uTorrent.</p></div></div><div class="license-container nav-se-container"><div class="nav-se-content"><img class="nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-key2.svg"><div class="nav-se-title">Enter License Key</div><p class="nav-se-text">Enter your license key and click on the activate button to start using <span>Torrent Scanner Plus.</span></p><input type="text" id="license-input-key" class="license-input-key" placeholder="Enter Key"><div class="license-spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div><button id="license-activate-button" class="license-activate-button nav-se-btn">Activate</button><p>Don't have a license key? <a class="license-buy-link" target="_blank">Click here</a></p></div><div class="nav-se-content display-none"><img class="nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-success.svg"><div class="nav-se-title">Happy Torrenting!</div><p class="nav-se-text">You are now an active PRO user</p><p class="nav-se-text">Your key is valid until <span class="expiry-date"></span></p></div><div class="nav-se-content display-none"><img class="nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-alert.svg"><div class="nav-se-title">Your license key has expired</div><p class="nav-se-text">Looks like your license key has expired, to renew your PRO license key, please select a license type:</p><a class="upgrade-to-pro-button-2 buy-license-expiry-button" href="https://shop.lavasoft.com/clickgate/join.aspx?ref=shop.lavasoft.com&amp;ujid=W9yhyAwEW5Q%3D" target="_blank">Buy Torrent Scanner +</a><p class="nav-se-text">Already have a license key? <a class="link" id="show-license-panel">Click here</a></p></div><div class="nav-se-content display-none"><img class="nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-success.svg"><p class="nav-se-text">Your key is valid until <span class="expiry-date"></span></p><p class="nav-se-text">Your License Key:</p><p class="nav-se-text"></p><p class="nav-se-text margin-top-50">Switch back to Torrent Scanner Free?</p><button class="activate-free-btn nav-se-btn">Revert to Free Version</button></div></div><div class="feedback-container nav-se-container"><div class="nav-se-content"><img class="nav-se-icon" src="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/assets/icon-feedback.svg"><div class="nav-se-title">Feedback</div><p class="nav-se-text">Help us improve Torrent Scanner, send us comments, bugs, feedback, and suggestions.</p><button id="feedback-button" class="feedback-button nav-se-btn">Send Feedback</button></div></div><div class="settings-container nav-se-container"><div class="nav-se-content"><div class="settings-title">Settings</div></div><div class="s-table"><div class="s-row"><div class="s-title">FAQ<div class="s-arrow"><span class="arrow-down"></span></div></div><div class="s-content faq-content"><p class="faq-text">FAQ: <a href="chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/faq.html" target="_blank">Click here</a></p></div></div><div class="s-row"><div class="s-title">Rate the extension<div class="s-arrow"><span class="arrow-down"></span></div></div><div class="s-content"><p class="rate-text">How did you like the extension experience?</p><div class="rating"><span class="rating-star">★</span><span class="rating-star">★</span><span class="rating-star">★</span><span class="rating-star">★</span><span class="rating-star">★</span></div><button class="rating-btn nav-se-btn" disabled="">Submit</button></div></div><div class="s-row"><div class="s-title">About<div class="s-arrow"><span class="arrow-down"></span></div></div><div class="s-content about-content"><div class="about-version">Version 1.4.0 <br><br> What's New</div><div class="about-new"><p></p><ul><li>Experience a complete new User Interface of the extension. It is enhanced and user friendly now.</li><li>Squashed some bugs.</li></ul><p></p></div></div></div><div class="s-row"><div class="s-title">Privacy Policy<div class="s-arrow"><span class="arrow-down"></span></div></div><div class="s-content"><div class="policy-text">Adaware Software (7270356 Canada Inc.) is the operator of the Adaware products suites and related services (the “<b>Company</b>”, ”<b>we</b>” or “<b>us</b>”). We respect your privacy rights and we are committed to protecting them. This privacy policy (“<b>Privacy Policy</b>” or simply “<b>policy</b>”) governs our products, services and websites that link to this Privacy Policy, and describes our practices of processing data from you. By “<b>you</b>”, we refer to either or all of the following: (i) visitors to our websites that links to this Privacy Policy (“<b>Visitor</b>” and “<b>Website</b>”, respectively); (ii) our customers using our software products and Services (“<b>User</b>”); and (c) a business customer, a business partner that has a contractual relationship with us or a prospective customer that is yet to be engaged in a contract with us (“Business Customer”). Unless explicitly mentioned otherwise, the information in this Privacy Policy refers to any and all data subject types (“you” or “your’). <br><br> For the purpose of this policy, the “<b>Service(s)</b>” shall include any software licensed by the Company, including features offered by or within the installed software or additional software scripts available therein (either downloaded from one of our websites, pre-installed on your device, downloaded through a third party website, obtained on a physical medium, or otherwise), or services provided through and/or on top such software, services offered on our websites, communication forums, support services, account operation, updates, enhancements, new features, premium support, extended guarantees, online version and free versions of a software or additional services or features as we ay make available from time to time. <br><br> If you are a California resident, please also see our <a href="https://www.adaware.com/CCPA/" target="_blank">CCPA Notice</a>. <br><br> <a href="https://www.adaware.com/privacy-policy/" target="_blank">Read more</a></div></div></div><div class="s-row" style="display: none;"><div class="s-title">Contact Us<div class="s-arrow"><span class="arrow-down"></span></div></div><div class="s-content"><div class="contact-text">For any payment and order-related support, please contact us at Email: <a href="mailto:support@torrentscanner.zendesk.com">support@torrentscanner.zendesk.com</a> or <a href="mailto:pcsoftwareinfo.com">pcsoftwareinfo.com</a><br><br>Phone: <a href="https://pcsoftwareinfo.com/contact.aspx" target="_blank">Click here</a></div></div></div></div></div></div><div class="nav"><button id="btnSync" class="nav-btn">Sync</button><button id="btnLicense" class="nav-btn">License</button><button id="btnHome" class="nav-btn">Home</button><button id="btnFeedback" class="nav-btn">Feedback</button><button id="btnSettings" class="nav-btn">Settings</button></div></div></template></div></body></html>
